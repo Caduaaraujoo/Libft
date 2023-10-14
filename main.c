@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 19:41:15 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/14 18:46:57 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/14 17:55:51 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/14 18:44:40 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <ctype.h>
+#include <stdio.h>
+
+int	ft_isascii(int c);
+int	ft_isalnum(int c);
+
+int	main(int argc, char *argv[])
 {
-	if((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
-		return (8);
+	printf("%d\n", ft_isalnum(8));
+	printf("%d\n", isalnum(8));
 	return (0);
 }
