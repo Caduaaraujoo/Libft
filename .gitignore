@@ -1,9 +1,6 @@
+.gitignore
 **/*.out
 **/*.swp
 **/*.swo
 **/*.vscode
-tests
-test_program
-.gitignore
 main.c
-
