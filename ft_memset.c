@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 18:17:38 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/15 19:52:44 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/15 20:43:15 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/15 22:37:18 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <stddef.h>
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (16384);
-	return (0);
+	unsigned char	*j;
+	size_t	i;
+
+	j = s;
+	i = 0;
+	while(i < n)
+	{
+		j[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
 }
