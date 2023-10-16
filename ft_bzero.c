@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 20:43:15 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/16 17:19:56 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/16 13:25:51 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/16 17:17:35 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
 	unsigned char	*j;
@@ -21,8 +21,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		j[i] = (unsigned char)c;
+		j[i] = '\0';
 		i++;
 	}
-	return (s);
 }
