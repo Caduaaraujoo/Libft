@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 18:37:33 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/17 15:14:43 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/15 20:07:54 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/17 15:12:42 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+#include "libft.h"
+#include  <stdlib.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	main(void)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+    char *src;
+    char *dest;
+    char *str = strdup("KJDHIOFJKLFPJKJKFREPJOREPJOFR");
+    src = &str[3];
+    dest = &str[5];
 
-	d = dest;
-	s = src;
-	i = 0;
-	if (d == s)
-		return (dest);
-	if (s < d)
-	{
-		while (n--)
-			d[n] = s[n];
-	}
-	else
-	{
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dest);
+    ft_memmove(dest, src, 5);
+    printf("memmove dest = %s, src = %s\n", dest, src);
+
+    return(0);
+
 }

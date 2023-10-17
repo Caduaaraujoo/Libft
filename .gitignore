@@ -2,6 +2,6 @@
 **/*.swp
 **/*.swo
 **/*.vscode
-tests
-test_program
-main.c
+# tests
+# test_program
+# main.c
