@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:39:20 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/19 18:53:00 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/19 19:02:23 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/19 19:53:01 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	len;
+	size_t	i;
+	const unsigned char *s_1;
+	const unsigned char *s_2;
 
-	if (c > 255)
-		c %= 256;
-	if (c == '\0')
+	i = 0;
+	s_1 = s1;
+	s_2 = s2;
+	while (i < n)
 	{
-		len = ft_strlen(s);
-		return (&((char *)s)[len]);
+		if (s_1[i] < s_2[i])
+			return (-1);
+		if (s_1[i] > s_2[i])
+			return (1);
+		i++;
 	}
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
+	return (0);
 }

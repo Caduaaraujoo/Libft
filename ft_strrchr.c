@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:39:20 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/19 18:53:00 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/19 14:29:37 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/19 18:49:42 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	int	last;
+	size_t			index;
 
+	last = -1;
+	index = 0;
 	if (c > 255)
 		c %= 256;
 	if (c == '\0')
+		return (&((char *)s)[ft_strlen(s)]);
+	while (s[index])
 	{
-		len = ft_strlen(s);
-		return (&((char *)s)[len]);
+		if (s[index] == c)
+			last = index;
+		index++;
 	}
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
+	if (last >= 0)
+		return (&((char *)s)[last]);
 	return (NULL);
 }

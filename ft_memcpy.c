@@ -6,7 +6,7 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:48:28 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/16 17:46:24 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:00:34 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	c = dest;
 	j = src;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	while (i < n)
 	{
 		c[i] = j[i];
