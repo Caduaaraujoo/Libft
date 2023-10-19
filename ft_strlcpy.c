@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 20:07:54 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/18 19:31:50 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/18 12:10:44 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/18 13:23:13 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <bsd/string.h>
-#include <ctype.h>
 
-int	main(void)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	test[10] = "teste";
-	printf("%p\n", ft_strchr(test, '\0'));
-	printf("%p\n", strchr(test, '\0'));
+	size_t	i;
+
+	i = 0;
+	if (!size)
+	{
+		return (ft_strlen(src));
+	}
+	while (src[i] != '\0' && i < size -1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
