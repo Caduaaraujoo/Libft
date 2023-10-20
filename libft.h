@@ -6,17 +6,13 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:14:36 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/19 19:11:31 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:46:08 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-
-/*
-	Is functions libray ctype.h
-*/
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -25,10 +21,6 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-
-/*
-	Is functions libray string.h
-*/
 
 size_t	ft_strlen(const char *__s);
 void	*ft_memset(void *s, int c, size_t n);
@@ -42,5 +34,6 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 #endif

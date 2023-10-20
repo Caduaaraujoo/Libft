@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 19:10:25 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/20 19:06:54 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/20 14:56:29 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/20 19:15:03 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <bsd/string.h>
 #include "libft.h"
+#include <stddef.h>
 
-int	main(void)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	str1[15];
-	char	str2[15];
+	size_t	i;
+	size_t	j;
 
-	printf("strnstr: ==> %s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-	printf("ft_strnstr ==> %s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-
-	return (0);
+	i = 0;
+	if (!*little)
+		return ((char *)big);
+	if (ft_strlen(little) > ft_strlen(big))
+		return (NULL);
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (little[j] && ft_strncmp(&big[i + j], &little[j], 1) == 0)
+			j++;
+		if (little[j] == '\0' && (j + i) <= len)
+			return (&((char *)big)[i]);
+		i++;
+	}
+	return (NULL);
 }
