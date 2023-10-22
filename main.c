@@ -6,7 +6,7 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:10:25 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/21 18:27:17 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/22 20:05:57 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@
 
 int	main(void)
 {
-	char	*str = "01234";
-   char  *test;
-
-   test = ft_substr("", 0, 0);
-   printf("Result ==> %s\n", test);
-   free(test);
-	return (0);
+	char *str = "i just want this part #############";
+	char *sub = ft_substr(str, 5, 10); // Extrai "é uma s"
+	if (sub != NULL)
+		printf("Substring: %s\n", sub);
+	free(sub); // Libera a memória alocada para a substring.
 }
