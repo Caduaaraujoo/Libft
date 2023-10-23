@@ -6,7 +6,7 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:29:37 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/19 18:49:42 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:25:30 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	last;
-	size_t			index;
+	int		last;
+	size_t	index;
 
 	last = -1;
 	index = 0;
