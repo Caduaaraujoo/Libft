@@ -6,13 +6,11 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:39:51 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/23 19:15:24 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:26:25 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

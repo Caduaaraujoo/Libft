@@ -6,12 +6,13 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:14:36 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/23 16:03:53 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/24 15:45:00 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdio.h>
 # include <stdlib.h>
 
 int		ft_isalpha(int c);
@@ -43,5 +44,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 #endif
