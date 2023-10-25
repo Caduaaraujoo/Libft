@@ -6,13 +6,13 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:44:30 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/24 19:45:54 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:27:01 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_amount_strings(const char *__s, char __c)
+static size_t	ft_amount_strings(const char *__s, char __c)
 {
 	size_t	i;
 	size_t	count;
@@ -31,11 +31,23 @@ size_t	ft_amount_strings(const char *__s, char __c)
 	}
 	return (count);
 }
-void	ft_len_string(const char *__s, char __c, char **__matrix)
+
+static int	ft_clean_memory(char **__matrix, int index)
+{
+	while (index >= 0)
+	{
+		free(__matrix[index]);
+		index--;
+	}
+	free(__matrix);
+	return (1);
+}
+
+static int	ft_len_string(const char *__s, char __c, char **__matrix)
 {
 	size_t	i;
 	size_t	len;
-	size_t	position;
+	int		position;
 
 	i = 0;
 	position = 0;
@@ -50,16 +62,16 @@ void	ft_len_string(const char *__s, char __c, char **__matrix)
 			i++;
 		}
 		__matrix[position] = malloc(len + 1);
-		// if (__matrix[position] == NULL)
-		// 	ft_tratar_error_malloc();
+		if (__matrix[position] == NULL)
+			return (ft_clean_memory(__matrix, position));
 		position++;
 		while (__s[i] && __s[i] == __c)
 			i++;
 	}
-	__matrix[position] = NULL;
+	return (0);
 }
 
-void	ft_fill_in_words(char const *__s, char __c, char **__matrix)
+static void	ft_fill_in_words(char const *__s, char __c, char **__matrix)
 {
 	size_t	i;
 	size_t	j;
@@ -89,10 +101,14 @@ char	**ft_split(char const *s, char c)
 {
 	char	**matrix_string;
 
-	matrix_string = malloc((ft_amount_strings(s, c) + 1) * sizeof(char *));
+	matrix_string = ft_calloc((ft_amount_strings(s, c) + 1), sizeof(char *));
 	if (matrix_string == NULL)
 		return (NULL);
-	ft_len_string(s, c, matrix_string);
+	if (ft_len_string(s, c, matrix_string) == 1)
+	{
+		matrix_string = NULL;
+		return (matrix_string);
+	}
 	ft_fill_in_words(s, c, matrix_string);
 	return (matrix_string);
 }
