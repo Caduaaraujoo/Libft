@@ -6,58 +6,57 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:00:58 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/25 19:38:53 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:57:39 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_convert_int_for_char(int n, char *__s)
+static int	ft_len_string(int n, int sig)
 {
-	char	c_char;
+	int	len;
+	int	y;
 
-	if (n <= 9)
+	len = sig == 1 ? 0 : 1;
+	y = n;
+	while (y >= 10)
 	{
-		c_char = n + '0';
-	}
-	else
-	{
-		c_char = (n % 10) + '0';
-		ft_convert_int_for_char(n / 10);
-	}
-}
-size_t	ft_len_str(int n, int is_s)
-{
-	size_t	len;
-	int		index;
-
-	len = 1;
-	index = is_s;
-	while (index > 10)
-	{
-		index = index / 10;
 		len++;
+		y /= 10;
 	}
+	len++;
 	return (len);
+}
+
+static void	alloc_char_in_string(char *__s, int i, int n)
+{
+	char	c;
+
+	while (i >= 0)
+	{
+		c = n % 10 + '0';
+		__s[i] = c;
+		n /= 10;
+		i--;
+	}
 }
 
 char	*ft_itoa(int n)
 {
+	char	*string;
 	int		signal;
-	int		is_signal;
-	char	*str_number;
 
 	signal = 1;
-	is_signal = 1;
+	if (n == -2147483648)
+		return (string = ft_strdup("-2147483648"));
 	if (n < 0)
-	{
 		signal = -1;
-		is_signal = 2;
-	}
-	str_number = malloc((ft_len_str(n, is_signal) + 1) * sizeof(char));
-	str_number[ft_len_str(n, is_signal) + 1] = '\0';
-	if (str_number == NULL)
+	string = ft_calloc((ft_len_string(n * signal, signal) + 1), sizeof(char));
+	if (string == NULL)
 		return (NULL);
-	ft_convert_int_for_char(n * signal, str_number);
-	return (str_number);
+	alloc_char_in_string(string, ft_len_string(n * signal, signal) - 1, n
+			* signal);
+	if (n < 0)
+		string[0] = '-';
+	return (string);
 }

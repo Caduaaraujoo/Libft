@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 19:10:25 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/26 11:55:50 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/26 13:46:24 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/26 13:52:03 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// crt_calloc.c
-// This program uses calloc to allocate space for
-// 40 long integers. It initializes each element to zero.
-
 #include "libft.h"
-#include <stdio.h>
 
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	printf("%s\n", ft_itoa(-10));
-	return (0);
+	size_t	index;
+
+	index = 0;
+	while (s[index])
+	{
+		f(index, &s[index]);
+		index++;
+	}
 }
