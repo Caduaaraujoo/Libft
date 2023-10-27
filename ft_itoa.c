@@ -6,7 +6,7 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:00:58 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/26 11:57:39 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/10/27 13:06:49 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ static int	ft_len_string(int n, int sig)
 	int	len;
 	int	y;
 
-	len = sig == 1 ? 0 : 1;
+	len = 0;
+	if (sig != 1)
+		len = 1;
 	y = n;
 	while (y >= 10)
 	{
@@ -55,7 +57,7 @@ char	*ft_itoa(int n)
 	if (string == NULL)
 		return (NULL);
 	alloc_char_in_string(string, ft_len_string(n * signal, signal) - 1, n
-			* signal);
+		* signal);
 	if (n < 0)
 		string[0] = '-';
 	return (string);
