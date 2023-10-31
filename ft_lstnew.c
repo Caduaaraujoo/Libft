@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 19:10:25 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/31 20:11:44 by caredua3         ###   ########.fr       */
+/*   Created: 2023/10/31 14:54:03 by caredua3          #+#    #+#             */
+/*   Updated: 2023/10/31 17:59:32 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// crt_calloc.c
-// This program uses calloc to allocate space for
-// 40 long integers. It initializes each element to zero.
-
 #include "libft.h"
-#include <stdio.h>
 
-int	main(void)
+t_list *ft_lstnew(void *content)
 {
-	t_list *test = ft_lstnew("Teste");
-	t_list *test2 = ft_lstnew("ajuda");
-	ft_lstadd_front(test->content, test2->content);
-	printf("%p\n", test->content);
-	return (0);
+	t_list *new_list;
+	new_list = (t_list *)ft_calloc(1, sizeof(t_list));
+	if (new_list == NULL)
+		return (NULL);
+	new_list->content = content;
+
+	return (new_list);
 }
+
