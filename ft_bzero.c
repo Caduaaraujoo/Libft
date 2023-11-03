@@ -6,11 +6,10 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:25:51 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/18 18:36:16 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 08:59:38 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

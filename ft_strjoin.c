@@ -6,12 +6,11 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:53:43 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/23 14:15:55 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:04:12 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -6,11 +6,11 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:09:12 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/19 18:02:49 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:04:52 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

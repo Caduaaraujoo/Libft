@@ -6,11 +6,11 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 19:26:32 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/16 17:20:16 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:04:34 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *__s)
 {

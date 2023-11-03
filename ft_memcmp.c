@@ -6,11 +6,11 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:02:23 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/23 19:25:55 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:02:00 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

@@ -6,12 +6,11 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:39:20 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/19 18:53:00 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:03:53 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 char	*ft_strchr(const char *s, int c)
 {

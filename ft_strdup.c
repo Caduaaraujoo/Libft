@@ -6,22 +6,21 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 16:36:23 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/21 17:14:50 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:23:42 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	char	*n_s;
+	char	*new_string;
 	size_t	size;
 
 	size = ft_strlen(s);
-	n_s = (char *)malloc((size + 1) * sizeof(char));
-	if (n_s == NULL)
+	new_string = (char *)malloc((size + 1) * sizeof(char));
+	if (new_string == NULL)
 		return (NULL);
-	ft_strlcpy(n_s, s, size + 1);
-	return (n_s);
+	ft_strlcpy(new_string, s, size + 1);
+	return (new_string);
 }

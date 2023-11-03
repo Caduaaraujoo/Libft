@@ -6,12 +6,11 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:56:29 by caredua3          #+#    #+#             */
-/*   Updated: 2023/10/24 19:51:11 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:05:01 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
