@@ -66,7 +66,7 @@ A parte bônus da libft introduz funcionalidades para manipulação de listas. U
 - **`ft_lstmap`:** Itera sobre cada nó da lista e aplica uma função a cada nó, criando uma nova lista.
 
 
-##Contribuindo
+## Contribuindo
 
 Sinta-se à vontade para contribuir para o desenvolvimento da libft. Se encontrar bugs ou tiver melhorias para sugerir, abra uma issue ou envie uma pull request.
 
