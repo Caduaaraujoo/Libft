@@ -6,7 +6,7 @@
 /*   By: caredua3 <caredua3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 13:45:28 by caredua3          #+#    #+#             */
-/*   Updated: 2023/11/03 09:00:21 by caredua3         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:57:27 by caredua3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*vector;
+	size_t	bytes;
 
-	vector = malloc(nmemb * size);
+	bytes = nmemb * size;
+	if (!size || bytes / size != nmemb)
+		return (malloc(0));
+	vector = malloc(bytes);
 	if (vector == NULL)
 		return (vector);
-	ft_bzero(vector, nmemb * size);
+	ft_bzero(vector, bytes);
 	return (vector);
 }
